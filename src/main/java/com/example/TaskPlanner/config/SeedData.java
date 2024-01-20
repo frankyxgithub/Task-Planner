@@ -32,6 +32,10 @@ public class SeedData implements CommandLineRunner {
                     .description("Blog-App")
                     .status(StatusType.DONE)
                     .build();
+
+            taskService.save(task1);
+            taskService.save(task2);
+            taskService.save(task3);
         }
 
     }
