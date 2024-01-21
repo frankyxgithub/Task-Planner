@@ -1,0 +1,9 @@
+ul.task-list {
+    list-style-type: square;
+}
+
+ul.task-list li {
+    border: lightgrey solid 1px;
+    padding: 5px;
+    cursor: pointer;
+}

@@ -1,5 +1,6 @@
 package com.example.TaskPlanner.services;
 
+import com.example.TaskPlanner.models.StatusType;
 import com.example.TaskPlanner.models.Task;
 import com.example.TaskPlanner.repositories.TaskRepository;
 import lombok.AllArgsConstructor;
@@ -25,5 +26,10 @@ public class TaskService {
         newTask.setUpdatedAt(LocalDateTime.now());
 
         return taskRepository.save(newTask);
+    }
+
+    public List<Task> getAllByStatus(StatusType status){
+        return taskRepository.findByStatus(status);
+
     }
 }

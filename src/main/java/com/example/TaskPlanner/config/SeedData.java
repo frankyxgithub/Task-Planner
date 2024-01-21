@@ -26,7 +26,7 @@ public class SeedData implements CommandLineRunner {
                     .build();
             Task task2 = Task.builder()
                     .description("Practise Spring-Boot")
-                    .status(StatusType.DOING)
+                    .status(StatusType.IN_PROGRESS)
                     .build();
             Task task3 = Task.builder()
                     .description("Blog-App")

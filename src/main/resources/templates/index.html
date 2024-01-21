@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <h1>Todo Planner</h1>
+            <h1>Task Planner</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,15 +26,15 @@
             </ul>
             <form class="d-flex"
                   action="#"
-                  th:action="@{/todos/new}"
-                  th:object="${newTodo}"
+                  th:action="@{/tasks/new}"
+                  th:object="${newTask}"
                   method="POST"
             >
                 <input class="form-control"
                        id="description"
                        name="description"
                        th:field="*{description}"
-                       placeholder="new todo description"
+                       placeholder="new task description"
                        required
                        type="text">
                 <button class="btn btn-outline-success" type="submit">Add</button>
@@ -46,25 +46,25 @@
     <div class="row">
         <div class="col-sm">
             <h3 class="text-center">Backlog</h3>
-            <ul class="todo-list">
-                <li class="border border-info" th:each="todo : ${backlog}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
-                    <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
+            <ul class="task-list">
+                <li class="border border-info" th:each="task : ${backlog}" th:onclick="'javascript:onHandleListItemClick(' + ${task.id} + ')'">
+                    <span th:text="${task.id}">id</span>: <span th:text="${task.description}"></span>
                 </li>
             </ul>
         </div>
         <div class="col-sm">
-            <h3 class="text-center">Doing</h3>
-            <ul class="todo-list">
-                <li class="border border-warning" th:each="todo : ${doing}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
-                    <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
+            <h3 class="text-center">In Progress</h3>
+            <ul class="task-list">
+                <li class="border border-warning" th:each="task : ${in_progress}" th:onclick="'javascript:onHandleListItemClick(' + ${task.id} + ')'">
+                    <span th:text="${task.id}">id</span>: <span th:text="${task.description}"></span>
                 </li>
             </ul>
         </div>
         <div class="col-sm">
             <h3 class="text-center">Done</h3>
-            <ul class="todo-list">
-                <li class="border border-success" th:each="todo : ${done}" th:onclick="'javascript:onHandleListItemClick(' + ${todo.id} + ')'">
-                    <span th:text="${todo.id}">id</span>: <span th:text="${todo.description}"></span>
+            <ul class="task-list">
+                <li class="border border-success" th:each="task : ${done}" th:onclick="'javascript:onHandleListItemClick(' + ${task.id} + ')'">
+                    <span th:text="${task.id}">id</span>: <span th:text="${task.description}"></span>
                 </li>
             </ul>
         </div>

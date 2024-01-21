@@ -8,7 +8,7 @@ const onHandleListItemClick = async (id) => {
         headers: { 'Content-Type': 'application/json' },
         body: {}
     }
-    const response = await fetch(`/todos/${id}`, options)
+    const response = await fetch(`/tasks/${id}`, options)
     const data = await response.json()
     console.log('data', data)
     window.location.reload()
