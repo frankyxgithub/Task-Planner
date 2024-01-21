@@ -32,4 +32,9 @@ public class TaskService {
         return taskRepository.findByStatus(status);
 
     }
+
+    public Task getById(Long id) {
+        return taskRepository.findById(id).orElseThrow();
+
+    }
 }
